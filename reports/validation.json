@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-15",
+  "environment": {
+    "operating_system": "Linux 6.18.44 x86_64",
+    "python": "3.12.14"
+  },
+  "independent_implementation": true,
+  "results": {
+    "compile": {
+      "command": "python -m compileall -q vaultguard tests",
+      "exit_code": 0
+    },
+    "container": {
+      "command": "docker --version",
+      "status": "not_run",
+      "reason": "Docker executable is not installed in the validation environment; CI is configured to build and run the image."
+    },
+    "demo": {
+      "command": "python -m vaultguard demo",
+      "duration_ms": 257.95,
+      "exit_code": 0,
+      "success": true
+    },
+    "determinism_check": {
+      "command": "two concurrent runs of python -m vaultguard demo",
+      "content_metrics_equal": true,
+      "first_snapshot_ids_equal": true,
+      "second_snapshot_ids_equal": true
+    },
+    "tests": {
+      "command": "python -m unittest discover -v",
+      "count": 50,
+      "duration_seconds": 0.719,
+      "exit_code": 0,
+      "failures": 0,
+      "result": "OK"
+    }
+  }
+}

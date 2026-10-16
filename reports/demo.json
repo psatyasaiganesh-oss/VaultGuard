@@ -1,0 +1,52 @@
+{
+  "audit_chain": {
+    "entries": 5,
+    "ok": true
+  },
+  "corruption": {
+    "detected_chunks": 6,
+    "injected_chunks": 6,
+    "post_repair_ok": true,
+    "repaired_chunks": 6
+  },
+  "deduplication": {
+    "logical_bytes_across_snapshots": 6291456,
+    "primary_bytes_avoided": 5832704,
+    "primary_content_bytes": 458752,
+    "primary_reduction_percent": 92.71,
+    "stored_bytes_including_mirror": 917504,
+    "unique_chunks": 112
+  },
+  "duration_ms": 257.95,
+  "first_snapshot": {
+    "chunk_references": 768,
+    "created_at": "2026-10-15T00:00:01.000000Z",
+    "file_count": 97,
+    "logical_bytes": 3145728,
+    "merkle_root": "0723b8f1cf46c8deafadcadfdcaefb934291a415a83bf02487e1b26b27403022",
+    "new_chunk_bytes": 196608,
+    "retained_until": "2026-10-16T00:00:01.000000Z",
+    "snapshot_id": "0c2a98ca0b258b2ff865efe73996d2d3",
+    "unique_chunks": 48
+  },
+  "independent_implementation": true,
+  "restore": {
+    "files": 97,
+    "fingerprint_match": true,
+    "logical_bytes": 3145728,
+    "verified_before_restore": true
+  },
+  "retention_delete_blocked": true,
+  "second_snapshot": {
+    "chunk_references": 768,
+    "created_at": "2026-10-15T00:05:00.000000Z",
+    "file_count": 97,
+    "logical_bytes": 3145728,
+    "merkle_root": "2fc499f25ada256c036fc042a112ab587c10b577a64f6ee35c3386ecf26845e2",
+    "new_chunk_bytes": 262144,
+    "retained_until": "2026-10-16T00:05:00.000000Z",
+    "snapshot_id": "c4333b717ccb6c6915bfcad28b8c4cfa",
+    "unique_chunks": 112
+  },
+  "success": true
+}

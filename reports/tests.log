@@ -1,0 +1,6 @@
+Command: python -m unittest discover -v
+Environment: Python 3.12.14, Linux x86_64
+
+Ran 50 tests in 0.719s
+
+OK

@@ -1,0 +1,34 @@
+name: VaultGuard CI
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile source
+        run: python -m compileall -q vaultguard tests
+      - name: Run tests
+        run: python -m unittest discover -v
+      - name: Run deterministic demo
+        run: python -m vaultguard demo
+
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build tested image
+        run: docker build -t vaultguard:ci .
+      - name: Run demo in container
+        run: docker run --rm vaultguard:ci demo
